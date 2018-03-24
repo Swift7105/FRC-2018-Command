@@ -12,7 +12,6 @@ import org.usfirst.frc.team5544.robot.commands.IntakeInFull;
 import org.usfirst.frc.team5544.robot.commands.IntakeInSlow;
 import org.usfirst.frc.team5544.robot.commands.IntakeOutFull;
 import org.usfirst.frc.team5544.robot.commands.IntakeSame;
-import org.usfirst.frc.team5544.robot.commands.Intake_Rotate_Stay;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
