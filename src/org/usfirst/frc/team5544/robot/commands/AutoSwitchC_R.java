@@ -10,9 +10,9 @@ public class AutoSwitchC_R extends CommandGroup {
     public AutoSwitchC_R() {
     	
     	addSequential(new DriveReverse0_5second());
-    	addSequential(new Right45());
-    	addSequential(new DriveReverse0_5second());
-    	addSequential(new Left45());
+    	addSequential(new Right_R45());
+    	addSequential(new DriveReverseFirst());
+    	addSequential(new Left_R45());
     	addSequential(new DriveReverseSlow());
     	addSequential(new Intake_Rotate_Out());
     	addSequential(new ElevatorSwitchUp());

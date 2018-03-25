@@ -40,7 +40,14 @@ public class Drivetrain extends Subsystem {
     	RobotMap.RightDriveBack.set(-0.35);
     }
     
-    public void DriveReverse() {
+    public void DriveReverseLeft() {
+    	RobotMap.LeftDriveFront.set(-0.50);
+    	RobotMap.LeftDriveBack.set(-0.50);
+    	RobotMap.RightDriveFront.set(0.50);
+    	RobotMap.RightDriveBack.set(0.50);
+    }
+    
+    public void DriveReverseRight() {
     	RobotMap.LeftDriveFront.set(-0.50);
     	RobotMap.LeftDriveBack.set(-0.50);
     	RobotMap.RightDriveFront.set(0.50);

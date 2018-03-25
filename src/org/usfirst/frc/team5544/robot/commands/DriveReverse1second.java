@@ -25,7 +25,7 @@ boolean Isitfinished;
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Isitfinished = false;
-    	Robot.DRIVETRAIN.DriveReverse();
+    	Robot.DRIVETRAIN.DriveReverseLeft();
     	Timer.delay(1);
     	Robot.DRIVETRAIN.DriveStop();
     	Isitfinished = true;

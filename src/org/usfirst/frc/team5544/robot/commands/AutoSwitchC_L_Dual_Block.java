@@ -20,12 +20,12 @@ public class AutoSwitchC_L_Dual_Block extends CommandGroup {
     	addSequential(new ElevatorSwitchDown());
     	addSequential(new DriveForward1second());
     	addSequential(new Left90());
-    	addSequential(new Left45());
+    	addSequential(new Left_R45());
     	addSequential(new IntakeInSlow());
     	addSequential(new DriveForwardBlock());
     	addSequential(new DriveReverse1second());
     	addParallel(new Intake_Rotate_In());
-    	addSequential(new Right45());
+    	addSequential(new Right_R45());
     	addSequential(new Right90());
     	addSequential(new DriveReverse1second());
     	addParallel(new IntakeOutSlow());

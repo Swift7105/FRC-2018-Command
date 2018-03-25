@@ -27,7 +27,7 @@ boolean Finished;
     	SmartDashboard.putString("Have I been Called", "Yes");
     	Finished = false;
     	Robot.ELEVATOR.Up();
-    	Timer.delay(2.5);
+    	Timer.delay(3);
     	Robot.ELEVATOR.Stop();
     	Finished = true;
     }

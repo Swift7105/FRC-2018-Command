@@ -102,7 +102,7 @@ public class MainAutoPrioritizeSwitch extends CommandGroup {
 				} else if (GameData.charAt(0) == 'R') {
 
 					AutoSwitchC_R.start();
-					SmartDashboard.putString("Running:", "Auto Switch Left On Center");
+					SmartDashboard.putString("Running:", "Auto Switch Right On Center");
 
 				}
 

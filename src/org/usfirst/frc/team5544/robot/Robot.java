@@ -9,7 +9,6 @@ package org.usfirst.frc.team5544.robot;
 
 import org.usfirst.frc.team5544.robot.commands.MainAutoCrossLine;
 import org.usfirst.frc.team5544.robot.commands.MainAutoPrioritizeSwitch;
-import org.usfirst.frc.team5544.robot.commands.MainAutoPrioritizeSwitchNoDump;
 import org.usfirst.frc.team5544.robot.commands.MainAutoPriority;
 import org.usfirst.frc.team5544.robot.commands.MainAutoScale;
 import org.usfirst.frc.team5544.robot.commands.MainAutoSwitch;
@@ -60,6 +59,7 @@ public class Robot extends TimedRobot {
 	double TimeRemaining = DriverStation.getInstance().getMatchTime();
 
 	public double drivetime;
+	
 
 	/**
 	 * This function is run when the robot is first started up and should be used
@@ -72,7 +72,6 @@ public class Robot extends TimedRobot {
 		m_oi = new OI();
 		m_chooser.addObject("Automatic Priority", new MainAutoPriority());
 		m_chooser.addDefault("Prioritize Switch", new MainAutoPrioritizeSwitch());
-		m_chooser.addObject("Auto Prioritize Switch No Dump", new MainAutoPrioritizeSwitchNoDump());
 		m_chooser.addObject("Cross The Auto Line", new MainAutoCrossLine());
 		m_chooser.addObject("Dump In the Switch", new MainAutoSwitch());
 		m_chooser.addObject("Auto Switch One Cube", new MainAutoScale());

@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team5544.robot;
 
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.Talon;
@@ -33,9 +34,9 @@ public class RobotMap {
 	public static Talon RightDriveBack = new Talon(3);
 	
 	
-	public static Encoder Left = new Encoder(0, 1, false);
-	public static Encoder Right = new Encoder(2,3,true);
-	public static Encoder Intake = new Encoder(4,5,false);
+	public static Encoder Left = new Encoder(0, 1, false, EncodingType.k1X);
+	public static Encoder Right = new Encoder(3, 4, true, EncodingType.k1X);
+	public static Encoder Intake = new Encoder(5, 6, false, EncodingType.k1X);
 	
 	
 	// For example to map the left and right motors, you could define the
