@@ -3,6 +3,7 @@ package org.usfirst.frc.team5544.robot.commands;
 import org.usfirst.frc.team5544.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -26,7 +27,10 @@ public class AutoSwitch_C_R_Reverse1 extends Command {
 		Robot.DRIVERIGHTPID.setSetpoint(1000);
 		Robot.DRIVELEFTPID.enable();
 		Robot.DRIVERIGHTPID.enable();
+		SmartDashboard.putNumber("Setpoint Left:",Robot.DRIVELEFTPID.getSetpoint());
+		SmartDashboard.putNumber("Setpoint RightP:", Robot.DRIVERIGHTPID.getSetpoint());
 	}
+	
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
