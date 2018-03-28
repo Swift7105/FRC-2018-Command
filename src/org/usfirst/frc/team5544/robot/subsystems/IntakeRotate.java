@@ -22,7 +22,7 @@ public class IntakeRotate extends Subsystem {
 	}
 
 	public void Intake_Out() {
-		RobotMap.IntakeRotate.set(-0.5);
+		RobotMap.IntakeRotate.set(-0.45);
 	}
 
 	public void Intake_Stop() {

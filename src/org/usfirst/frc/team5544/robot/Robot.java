@@ -23,6 +23,7 @@ import org.usfirst.frc.team5544.robot.subsystems.IntakeRotate;
 
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -54,6 +55,7 @@ public class Robot extends TimedRobot {
 	SendableChooser<String> StartingPosition = new SendableChooser<>();
 
 	PowerDistributionPanel pdp = new PowerDistributionPanel();
+	
 	double input = pdp.getVoltage();
 	
 	double TimeRemaining = DriverStation.getInstance().getMatchTime();
@@ -87,6 +89,7 @@ public class Robot extends TimedRobot {
 
 		SmartDashboard.putNumber("PDP Input", input);
 		SmartDashboard.putNumber("Time Remaining", TimeRemaining);
+		SmartDashboard.getBoolean("Encoder", RobotMap.Left.getDirection());
 	}
 
 	/**
