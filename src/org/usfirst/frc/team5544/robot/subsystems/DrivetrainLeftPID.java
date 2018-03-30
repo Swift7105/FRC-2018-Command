@@ -16,12 +16,14 @@ public class DrivetrainLeftPID extends PIDSubsystem {
 	Encoder Left = RobotMap.Left;
 	
 	
+	
     // Initialize your subsystem here
     public DrivetrainLeftPID() {
-    	super("DrivetrainLeft",0.0,0.0,0.0);
+    	super("DrivetrainLeft",1.0,0.0,0.0);
     	setOutputRange(-0.5,0.5);
     	setInputRange(-5,10000);
     	setAbsoluteTolerance(0.5);
+    	
     
     	
         // Use these to get going:

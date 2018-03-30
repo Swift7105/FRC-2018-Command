@@ -23,7 +23,6 @@ import org.usfirst.frc.team5544.robot.subsystems.IntakeRotate;
 
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -49,6 +48,8 @@ public class Robot extends TimedRobot {
 	public static final IntakeRotate INTAKEROTATE = new IntakeRotate();
 	public static final DrivetrainLeftPID DRIVELEFTPID = new DrivetrainLeftPID();
 	public static final DrivetrainRightPID DRIVERIGHTPID = new DrivetrainRightPID();
+	//public static final EncoderLeft ENCODERLEFT = new EncoderLeft();
+	//public static final EncoderRight ENCODERRIGHT = new EncoderRight();
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -78,6 +79,8 @@ public class Robot extends TimedRobot {
 		m_chooser.addObject("Dump In the Switch", new MainAutoSwitch());
 		m_chooser.addObject("Auto Switch One Cube", new MainAutoScale());
 		m_chooser.addObject("Turn Testing", new MainAutoTestTurning());
+	//	m_chooser.addObject("PID Test", new MainAutoTestPID());
+		
 		SmartDashboard.putData("Auto Mode", m_chooser);
 
 		StartingPosition.addObject("Left", "L");
