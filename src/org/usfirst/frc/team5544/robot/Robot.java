@@ -12,14 +12,16 @@ import org.usfirst.frc.team5544.robot.commands.MainAutoPrioritizeSwitch;
 import org.usfirst.frc.team5544.robot.commands.MainAutoPriority;
 import org.usfirst.frc.team5544.robot.commands.MainAutoScale;
 import org.usfirst.frc.team5544.robot.commands.MainAutoSwitch;
+import org.usfirst.frc.team5544.robot.commands.MainAutoTestPID;
 import org.usfirst.frc.team5544.robot.commands.MainAutoTestTurning;
+import org.usfirst.frc.team5544.robot.subsystems.DriveLeftPID;
+import org.usfirst.frc.team5544.robot.subsystems.DriveRightPID;
 import org.usfirst.frc.team5544.robot.subsystems.Drivetrain;
-import org.usfirst.frc.team5544.robot.subsystems.DrivetrainLeftPID;
-import org.usfirst.frc.team5544.robot.subsystems.DrivetrainRightPID;
 import org.usfirst.frc.team5544.robot.subsystems.Dumper;
 import org.usfirst.frc.team5544.robot.subsystems.Elevator;
 import org.usfirst.frc.team5544.robot.subsystems.Intake;
 import org.usfirst.frc.team5544.robot.subsystems.IntakeRotate;
+import org.usfirst.frc.team5544.robot.subsystems.IntakeRotatePID;
 
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.DriverStation;
@@ -46,11 +48,11 @@ public class Robot extends TimedRobot {
 	public static final Intake INTAKE = new Intake();
 	public static final Dumper DUMPER = new Dumper();
 	public static final IntakeRotate INTAKEROTATE = new IntakeRotate();
-	public static final DrivetrainLeftPID DRIVELEFTPID = new DrivetrainLeftPID();
-	public static final DrivetrainRightPID DRIVERIGHTPID = new DrivetrainRightPID();
-	//public static final EncoderLeft ENCODERLEFT = new EncoderLeft();
-	//public static final EncoderRight ENCODERRIGHT = new EncoderRight();
-
+	public static final IntakeRotatePID INTAKEROTATEPID = new IntakeRotatePID();
+	public static final DriveLeftPID DRIVELEFTPID = new DriveLeftPID();
+	public static final DriveRightPID DRIVERIGHTPID = new DriveRightPID();
+	
+	
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
 	SendableChooser<String> StartingPosition = new SendableChooser<>();
@@ -79,7 +81,7 @@ public class Robot extends TimedRobot {
 		m_chooser.addObject("Dump In the Switch", new MainAutoSwitch());
 		m_chooser.addObject("Auto Switch One Cube", new MainAutoScale());
 		m_chooser.addObject("Turn Testing", new MainAutoTestTurning());
-	//	m_chooser.addObject("PID Test", new MainAutoTestPID());
+		m_chooser.addObject("PID Test", new MainAutoTestPID());
 		
 		SmartDashboard.putData("Auto Mode", m_chooser);
 
@@ -91,8 +93,7 @@ public class Robot extends TimedRobot {
 		// SmartDashboard.putData("Voltage", Robot.);
 
 		SmartDashboard.putNumber("PDP Input", input);
-		SmartDashboard.putNumber("Time Remaining", TimeRemaining);
-		SmartDashboard.getBoolean("Encoder", RobotMap.Left.getDirection());
+		
 	}
 
 	/**
@@ -138,6 +139,9 @@ public class Robot extends TimedRobot {
 		if (m_autonomousCommand != null & Pos != null) {
 			m_autonomousCommand.start();
 		}
+		
+		SmartDashboard.putNumber("Distance Left", RobotMap.Left.getDistance());
+		SmartDashboard.putNumber("Distance Right", RobotMap.Right.getDistance());
 
 	}
 
@@ -146,6 +150,8 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousPeriodic() {
+		SmartDashboard.putNumber("Time Remaining", TimeRemaining);
+		SmartDashboard.getBoolean("Encoder", RobotMap.Left.getDirection());
 		Scheduler.getInstance().run();
 	}
 

@@ -36,8 +36,10 @@ public class RobotMap {
 	
 	
 	public static Encoder Left = new Encoder(0, 1, false, EncodingType.k1X);
-	public static Encoder Right = new Encoder(3, 4, true, EncodingType.k1X);
-	public static Encoder Intake = new Encoder(5, 6, false, EncodingType.k1X);
+	public static Encoder Right = new Encoder(2, 3, false, EncodingType.k1X);
+	public static Encoder Intake = new Encoder(4, 5, false, EncodingType.k1X);
+	
+	
 	
 	
 	

@@ -6,12 +6,15 @@
 /*----------------------------------------------------------------------------*/
 
 package org.usfirst.frc.team5544.robot;
+
 import org.usfirst.frc.team5544.robot.commands.ElevatorDown;
 import org.usfirst.frc.team5544.robot.commands.ElevatorScaleUp;
-import org.usfirst.frc.team5544.robot.commands.IntakeInFull;
 import org.usfirst.frc.team5544.robot.commands.IntakeInSlow;
 import org.usfirst.frc.team5544.robot.commands.IntakeOutFull;
-import org.usfirst.frc.team5544.robot.commands.IntakeSame;
+import org.usfirst.frc.team5544.robot.commands.Intake_Back;
+import org.usfirst.frc.team5544.robot.commands.Intake_Down;
+import org.usfirst.frc.team5544.robot.commands.Intake_Switch;
+import org.usfirst.frc.team5544.robot.commands.Intake_Vertical;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -22,57 +25,49 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	
-	
-	
+
 	public static Joystick Joystick1 = new Joystick(1);
 	public static Joystick Joystick2 = new Joystick(2);
-	
-	
-	
-	public static Button Button1_1 = new JoystickButton(Joystick1,1);
-	public static Button Button1_2 = new JoystickButton(Joystick1,2);
-	public static Button Button1_3 = new JoystickButton(Joystick1,3);
-	public static Button Button1_4 = new JoystickButton(Joystick2,4);
-	public static Button Button1_5 = new JoystickButton(Joystick2,5);
-	public static Button Button1_6 = new JoystickButton(Joystick2,6);
-	public static Button Button1_7 = new JoystickButton(Joystick2,7);
-	public static Button Button1_8 = new JoystickButton(Joystick2,8);
-	
-	
-	
-	
-	public static Button Button2_1 = new JoystickButton(Joystick2,1);
-	public static Button Button2_2 = new JoystickButton(Joystick2,2);
-	public static Button Button2_3 = new JoystickButton(Joystick2,3);
-	public static Button Button2_4 = new JoystickButton(Joystick2,4);
-	public static Button Button2_5 = new JoystickButton(Joystick2,5);
-	public static Button Button2_6 = new JoystickButton(Joystick2,6);
-	public static Button Button2_7 = new JoystickButton(Joystick2,7);
-	public static Button Button2_8 = new JoystickButton(Joystick2,8);
-	
-	
-	
+
+	public static Button Button1_1 = new JoystickButton(Joystick1, 1);
+	public static Button Button1_2 = new JoystickButton(Joystick1, 2);
+	public static Button Button1_3 = new JoystickButton(Joystick1, 3);
+	public static Button Button1_4 = new JoystickButton(Joystick2, 4);
+	public static Button Button1_5 = new JoystickButton(Joystick2, 5);
+	public static Button Button1_6 = new JoystickButton(Joystick2, 6);
+	public static Button Button1_7 = new JoystickButton(Joystick2, 7);
+	public static Button Button1_8 = new JoystickButton(Joystick2, 8);
+
+	public static Button Button2_1 = new JoystickButton(Joystick2, 1);
+	public static Button Button2_2 = new JoystickButton(Joystick2, 2);
+	public static Button Button2_3 = new JoystickButton(Joystick2, 3);
+	public static Button Button2_4 = new JoystickButton(Joystick2, 4);
+	public static Button Button2_5 = new JoystickButton(Joystick2, 5);
+	public static Button Button2_6 = new JoystickButton(Joystick2, 6);
+	public static Button Button2_7 = new JoystickButton(Joystick2, 7);
+	public static Button Button2_8 = new JoystickButton(Joystick2, 8);
+
 	public OI() {
-		
+
 		Button1_1.whileHeld(new ElevatorScaleUp());
 		Button1_2.whileHeld(new ElevatorDown());
-		Button2_2.whileHeld(new IntakeInSlow());
-		Button2_4.whileHeld(new IntakeOutFull());
-		Button2_1.whileHeld(new IntakeSame());
-		Button2_3.whileHeld(new IntakeInFull());
-		
-		
-		
-		
-		
-		
-		
-		
+
+		Button2_5.whileHeld(new IntakeInSlow());
+		Button2_6.whileHeld(new IntakeOutFull());
+
+		Button2_1.whenPressed(new Intake_Down());
+		Button2_4.whenPressed(new Intake_Vertical());
+		Button2_2.whenPressed(new Intake_Back());
+		Button2_3.whenPressed(new Intake_Switch());
+
+		/*
+		 * Button2_2.whileHeld(new IntakeInSlow()); Button2_4.whileHeld(new
+		 * IntakeOutFull()); Button2_1.whileHeld(new IntakeSame());
+		 * Button2_3.whileHeld(new IntakeInFull());
+		 */
+
 	}
-	
-	
-	
+
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
