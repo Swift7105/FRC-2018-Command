@@ -16,6 +16,7 @@ public class Intake_Vertical extends Command {
 
     public Intake_Vertical() {
     	requires(Robot.INTAKEROTATEPID);
+		RobotMap.Intake.setDistancePerPulse(2);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
