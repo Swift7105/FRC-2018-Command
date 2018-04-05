@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class Intake_Down extends Command {
 	boolean finished;
-	double setpoint = -230;
+	double setpoint = -300;
 	double error = Math.abs(setpoint - RobotMap.Intake.getDistance());
 
 	public Intake_Down() {
@@ -45,7 +45,6 @@ public class Intake_Down extends Command {
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	protected void interrupted() {
-		Robot.INTAKEROTATE.Intake_Stop();
-		Robot.INTAKEROTATEPID.disable();
+	
 	}
 }

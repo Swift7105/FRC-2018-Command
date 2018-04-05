@@ -174,7 +174,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Robot.DRIVETRAIN.TankDrive(-OI.Joystick1.getRawAxis(1), OI.Joystick1.getRawAxis(5));
-		Robot.INTAKEROTATE.Intake_Manual(-OI.Joystick2.getRawAxis(1) * 0.58);
+	//	Robot.INTAKEROTATE.Intake_Manual(-OI.Joystick2.getRawAxis(1) * 0.58);
 		// down
 		if (-OI.Joystick2.getRawAxis(5) > 0) {
 			Robot.ELEVATOR.Manual(-OI.Joystick2.getRawAxis(5) * 0.85);
@@ -183,8 +183,8 @@ public class Robot extends TimedRobot {
 		else if (-OI.Joystick2.getRawAxis(5) < 0) {
 			Robot.ELEVATOR.Manual(-OI.Joystick2.getRawAxis(5) * 0.75);
 		}
-		Robot.DUMPER.Manual(OI.Joystick2.getRawAxis(2));
-		Robot.DUMPER.Manual(-OI.Joystick2.getRawAxis(3));
+		Robot.DUMPER.Manual(-OI.Joystick1.getRawAxis(2));
+		Robot.DUMPER.Manual(OI.Joystick1.getRawAxis(3)*0.75);
 		Scheduler.getInstance().run();
 		SmartDashboard.putNumber("IntakePos:", RobotMap.Intake.getDistance());
 	}
