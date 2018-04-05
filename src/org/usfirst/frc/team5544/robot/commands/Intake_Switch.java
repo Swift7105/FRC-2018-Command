@@ -26,25 +26,17 @@ public class Intake_Switch extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		if (error > 100) {
-			finished = false;
-			Robot.INTAKEROTATEPID.setSetpoint(setpoint);
-			Robot.INTAKEROTATEPID.enable();
-		}
-		if (error < 100) {
-			finished = true;
-		}
+		Robot.INTAKEROTATEPID.setSetpoint(setpoint);
+		Robot.INTAKEROTATEPID.enable();
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return finished;
+		return Math.abs(Robot.INTAKEROTATEPID.getSetpoint() - Robot.INTAKEROTATEPID.getPosition()) < setpoint;
 	}
 
 	// Called once after isFinished returns true
 	protected void end() {
-		Robot.INTAKEROTATEPID.disable();
-		Robot.INTAKEROTATE.Intake_Stop();
 	}
 
 	// Called when another command which requires one or more of the same
