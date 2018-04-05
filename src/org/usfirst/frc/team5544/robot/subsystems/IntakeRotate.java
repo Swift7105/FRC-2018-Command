@@ -1,6 +1,7 @@
 package org.usfirst.frc.team5544.robot.subsystems;
 
 import org.usfirst.frc.team5544.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -12,6 +13,7 @@ public class IntakeRotate extends Subsystem {
 	// here. Call these from Commands.
 
 	public void initDefaultCommand() {
+		
 		// setDefaultCommand(new Intake_Rotate_Stay());
 		// Set the default command for a subsystem here.
 		// setDefaultCommand(new MySpecialCommand());
@@ -40,4 +42,6 @@ public class IntakeRotate extends Subsystem {
 	public void Intake_Auto() {
 		RobotMap.IntakeRotate.set(-0.45);
 	}
+	
+	
 }

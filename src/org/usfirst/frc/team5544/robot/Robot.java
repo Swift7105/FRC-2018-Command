@@ -93,7 +93,7 @@ public class Robot extends TimedRobot {
 		// SmartDashboard.putData("Voltage", Robot.);
 
 		SmartDashboard.putNumber("PDP Input", input);
-		
+		RobotMap.Intake.reset();
 	}
 
 	/**

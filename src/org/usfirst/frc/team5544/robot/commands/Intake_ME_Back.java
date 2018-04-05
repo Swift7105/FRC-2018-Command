@@ -8,14 +8,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Intake_Back extends Command {
-	boolean finished;
-	double setpoint = 1000;
-	double error = Math.abs(setpoint - RobotMap.Intake.getDistance());
+public class Intake_ME_Back extends Command {
+boolean finished;
 
-	public Intake_Back() {
-		requires(Robot.INTAKEROTATEPID);
-		RobotMap.Intake.setDistancePerPulse(2);
+	public Intake_ME_Back() {
+		requires(Robot.INTAKEROTATE);
+		
 
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
@@ -28,31 +26,29 @@ public class Intake_Back extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		if (error > 100) {
-			finished = false;
-			Robot.INTAKEROTATEPID.setSetpoint(setpoint);
-			Robot.INTAKEROTATEPID.enable();
+		if(RobotMap.Intake.getDistance() > -6) {
+			RobotMap.IntakeRotate.set(-0.2);
 		}
-		if (error < 100) {
-			finished = true;
+		else if(RobotMap.Intake.getDistance() < -6) {
+			RobotMap.IntakeRotate.set(0.2);
 		}
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return finished;
+		return false;
 	}
 
 	// Called once after isFinished returns true
 	protected void end() {
 		Robot.INTAKEROTATE.Intake_Stop();
-		Robot.INTAKEROTATEPID.disable();
+		
 	}
 
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	protected void interrupted() {
 		Robot.INTAKEROTATE.Intake_Stop();
-		Robot.INTAKEROTATEPID.disable();
+		
 	}
 }

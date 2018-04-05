@@ -11,10 +11,10 @@ import org.usfirst.frc.team5544.robot.commands.ElevatorDown;
 import org.usfirst.frc.team5544.robot.commands.ElevatorScaleUp;
 import org.usfirst.frc.team5544.robot.commands.IntakeInSlow;
 import org.usfirst.frc.team5544.robot.commands.IntakeOutFull;
-import org.usfirst.frc.team5544.robot.commands.Intake_Back;
-import org.usfirst.frc.team5544.robot.commands.Intake_Down;
-import org.usfirst.frc.team5544.robot.commands.Intake_Switch;
-import org.usfirst.frc.team5544.robot.commands.Intake_Vertical;
+import org.usfirst.frc.team5544.robot.commands.Intake_ME_Back;
+import org.usfirst.frc.team5544.robot.commands.Intake_ME_Down;
+import org.usfirst.frc.team5544.robot.commands.Intake_ME_Switch;
+import org.usfirst.frc.team5544.robot.commands.Intake_ME_Vertical;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -55,10 +55,10 @@ public class OI {
 		Button2_5.whileHeld(new IntakeInSlow());
 		Button2_6.whileHeld(new IntakeOutFull());
 
-		Button2_1.whenPressed(new Intake_Down());
-		Button2_4.whenPressed(new Intake_Vertical());
-		Button2_2.whenPressed(new Intake_Back());
-		Button2_3.whenPressed(new Intake_Switch());
+		Button2_1.whenPressed(new Intake_ME_Down());
+		Button2_4.whenPressed(new Intake_ME_Vertical());
+		Button2_2.whenPressed(new Intake_ME_Back());
+		Button2_3.whenPressed(new Intake_ME_Switch());
 
 		/*
 		 * Button2_2.whileHeld(new IntakeInSlow()); Button2_4.whileHeld(new
