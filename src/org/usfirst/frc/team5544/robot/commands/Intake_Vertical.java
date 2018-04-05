@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class Intake_Vertical extends Command {
 	boolean finished;
-	double setpoint = -48;
+	double setpoint = -74;
 	double error = Math.abs(setpoint - RobotMap.Intake.getDistance());
 	
 
@@ -34,7 +34,7 @@ public class Intake_Vertical extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return Math.abs(Robot.INTAKEROTATEPID.getSetpoint() - Robot.INTAKEROTATEPID.getPosition()) < setpoint;
+    	return Math.abs(Robot.INTAKEROTATEPID.getSetpoint() - Robot.INTAKEROTATEPID.getPosition()) < 5;
     }
 
     // Called once after isFinished returns true

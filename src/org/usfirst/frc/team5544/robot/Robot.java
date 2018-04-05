@@ -103,6 +103,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void disabledInit() {
+		RobotMap.Intake.reset();
 
 	}
 
@@ -164,6 +165,7 @@ public class Robot extends TimedRobot {
 		if (m_autonomousCommand != null) {
 			m_autonomousCommand.cancel();
 		}
+		RobotMap.Intake.reset();
 	}
 
 	/**
@@ -184,6 +186,7 @@ public class Robot extends TimedRobot {
 		Robot.DUMPER.Manual(OI.Joystick2.getRawAxis(2));
 		Robot.DUMPER.Manual(-OI.Joystick2.getRawAxis(3));
 		Scheduler.getInstance().run();
+		SmartDashboard.putNumber("IntakePos:", RobotMap.Intake.getDistance());
 	}
 
 	/**

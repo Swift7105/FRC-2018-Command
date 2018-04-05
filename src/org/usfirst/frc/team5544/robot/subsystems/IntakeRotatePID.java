@@ -11,8 +11,9 @@ public class IntakeRotatePID extends PIDSubsystem {
 
 	// Initialize your subsystem here
 	public IntakeRotatePID() {
-		super("Intake Encoder", 0.0005, 0.0, 0.0);
-		setOutputRange(-0.5,0.5);
+		super("Intake Encoder", 0.009, 0.0, 0.0);
+		setOutputRange(-1,1);
+		RobotMap.Intake.reset();
 		setSetpoint(0);
 		enable();
 		
