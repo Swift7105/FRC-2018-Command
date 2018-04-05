@@ -12,7 +12,9 @@ public class IntakeRotatePID extends PIDSubsystem {
 	// Initialize your subsystem here
 	public IntakeRotatePID() {
 		super("Intake Encoder", 0.0005, 10000, 0.0);
-		
+		setOutputRange(-0.5,0.5);
+		setSetpoint(0);
+		enable();
 		
 		
 		

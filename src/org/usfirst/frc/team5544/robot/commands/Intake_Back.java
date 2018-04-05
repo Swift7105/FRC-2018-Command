@@ -10,12 +10,11 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class Intake_Back extends Command {
 	boolean finished;
-	double setpoint = 1000;
+	double setpoint = -6;
 	double error = Math.abs(setpoint - RobotMap.Intake.getDistance());
 
 	public Intake_Back() {
 		requires(Robot.INTAKEROTATEPID);
-		RobotMap.Intake.setDistancePerPulse(2);
 
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);

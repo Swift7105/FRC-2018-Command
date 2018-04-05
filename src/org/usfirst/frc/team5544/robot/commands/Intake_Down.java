@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class Intake_Down extends Command {
 	boolean finished;
-	double setpoint = 100;
+	double setpoint = -230;
 	double error = Math.abs(setpoint - RobotMap.Intake.getDistance());
 
 	public Intake_Down() {

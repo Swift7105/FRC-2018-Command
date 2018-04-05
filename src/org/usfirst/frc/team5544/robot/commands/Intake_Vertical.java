@@ -10,13 +10,12 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class Intake_Vertical extends Command {
 	boolean finished;
-	double setpoint = 100;
+	double setpoint = -48;
 	double error = Math.abs(setpoint - RobotMap.Intake.getDistance());
 	
 
     public Intake_Vertical() {
     	requires(Robot.INTAKEROTATEPID);
-		RobotMap.Intake.setDistancePerPulse(2);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
