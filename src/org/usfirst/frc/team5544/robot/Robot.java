@@ -12,7 +12,6 @@ import org.usfirst.frc.team5544.robot.commands.MainAutoPrioritizeSwitch;
 import org.usfirst.frc.team5544.robot.commands.MainAutoPriority;
 import org.usfirst.frc.team5544.robot.commands.MainAutoScale;
 import org.usfirst.frc.team5544.robot.commands.MainAutoSwitch;
-import org.usfirst.frc.team5544.robot.commands.MainAutoTestPID;
 import org.usfirst.frc.team5544.robot.commands.MainAutoTestTurning;
 import org.usfirst.frc.team5544.robot.subsystems.DriveLeftPID;
 import org.usfirst.frc.team5544.robot.subsystems.DriveRightPID;
@@ -81,7 +80,6 @@ public class Robot extends TimedRobot {
 		m_chooser.addObject("Dump In the Switch", new MainAutoSwitch());
 		m_chooser.addObject("Auto Switch One Cube", new MainAutoScale());
 		m_chooser.addObject("Turn Testing", new MainAutoTestTurning());
-		m_chooser.addObject("PID Test", new MainAutoTestPID());
 		
 		SmartDashboard.putData("Auto Mode", m_chooser);
 
@@ -110,6 +108,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
+		RobotMap.Intake.reset();
 	}
 
 	/**
@@ -129,6 +128,7 @@ public class Robot extends TimedRobot {
 		m_autonomousCommand = m_chooser.getSelected();
 		Pos = StartingPosition.getSelected();
 		SmartDashboard.putString("Location", Pos);
+		RobotMap.Intake.reset();
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		 * switch(autoSelected) { case "My Auto": autonomousCommand = new
@@ -165,7 +165,7 @@ public class Robot extends TimedRobot {
 		if (m_autonomousCommand != null) {
 			m_autonomousCommand.cancel();
 		}
-		RobotMap.Intake.reset();
+		
 	}
 
 	/**
@@ -183,7 +183,8 @@ public class Robot extends TimedRobot {
 		else if (-OI.Joystick2.getRawAxis(5) < 0) {
 			Robot.ELEVATOR.Manual(-OI.Joystick2.getRawAxis(5) * 0.75);
 		}
-		Robot.DUMPER.Manual(-OI.Joystick1.getRawAxis(2));
+		
+		//Robot.DUMPER.Manual(-OI.Joystick1.getRawAxis(2));
 		Robot.DUMPER.Manual(OI.Joystick1.getRawAxis(3)*0.75);
 		Scheduler.getInstance().run();
 		SmartDashboard.putNumber("IntakePos:", RobotMap.Intake.getDistance());

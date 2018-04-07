@@ -16,11 +16,11 @@ public class Dumper extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     public void DumperOut() {
-    	RobotMap.Dumper.set(-0.75);
+    	RobotMap.Dumper.set(0.45);
     	
     }
     public void DumperIn() {
-    	RobotMap.Dumper.set(0.75);
+    	RobotMap.Dumper.set(-0.45);
     	
     }
     public void DumperStop() {

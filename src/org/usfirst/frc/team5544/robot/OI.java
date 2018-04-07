@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team5544.robot;
 
+import org.usfirst.frc.team5544.robot.commands.DumperIn;
 import org.usfirst.frc.team5544.robot.commands.ElevatorDown;
 import org.usfirst.frc.team5544.robot.commands.ElevatorScaleUp;
 import org.usfirst.frc.team5544.robot.commands.IntakeInSlow;
@@ -34,7 +35,7 @@ public class OI {
 	public static Button Button1_3 = new JoystickButton(Joystick1, 3);
 	public static Button Button1_4 = new JoystickButton(Joystick2, 4);
 	public static Button Button1_5 = new JoystickButton(Joystick2, 5);
-	public static Button Button1_6 = new JoystickButton(Joystick2, 6);
+	public static Button Button1_6 = new JoystickButton(Joystick1, 6);
 	public static Button Button1_7 = new JoystickButton(Joystick2, 7);
 	public static Button Button1_8 = new JoystickButton(Joystick2, 8);
 
@@ -47,10 +48,12 @@ public class OI {
 	public static Button Button2_7 = new JoystickButton(Joystick2, 7);
 	public static Button Button2_8 = new JoystickButton(Joystick2, 8);
 
+	
 	public OI() {
 
 		Button1_1.whileHeld(new ElevatorScaleUp());
 		Button1_2.whileHeld(new ElevatorDown());
+		Button1_6.whileHeld(new DumperIn());
 
 		Button2_5.whileHeld(new IntakeInSlow());
 		Button2_6.whileHeld(new IntakeOutFull());
@@ -59,6 +62,8 @@ public class OI {
 		Button2_4.whenPressed(new Intake_Vertical());
 		Button2_2.whenPressed(new Intake_Back());
 		Button2_3.whenPressed(new Intake_Switch());
+		
+		
 
 		/*
 		 * Button2_2.whileHeld(new IntakeInSlow()); Button2_4.whileHeld(new

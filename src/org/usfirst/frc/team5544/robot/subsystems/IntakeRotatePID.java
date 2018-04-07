@@ -11,8 +11,8 @@ public class IntakeRotatePID extends PIDSubsystem {
 
 	// Initialize your subsystem here
 	public IntakeRotatePID() {
-		super("Intake Encoder", 0.005, 0.0, 0.0);
-		setOutputRange(-0.5,0.55);
+		super("Intake Encoder", 0.009, 0.0, 0.0);
+		setOutputRange(-0.35,0.6);
 		
 		//setSetpoint(0);
 		//enable();

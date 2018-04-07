@@ -24,7 +24,7 @@ boolean Finished;
     protected void execute() {
     	Finished = false;
     	Robot.DUMPER.DumperOut();
-    	Timer.delay(0.5);
+    	Timer.delay(1);
     	Robot.DUMPER.DumperStop();
     	Finished = true;
     }

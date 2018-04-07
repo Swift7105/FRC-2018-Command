@@ -26,7 +26,7 @@ boolean Isitfinished;
     protected void execute() {
     	Isitfinished = false;
     	Robot.DRIVETRAIN.DriveReverseSlow();
-    	Timer.delay(1.2);
+    	Timer.delay(1.5);
     	Robot.DRIVETRAIN.DriveStop();
     	Isitfinished = true;
     	

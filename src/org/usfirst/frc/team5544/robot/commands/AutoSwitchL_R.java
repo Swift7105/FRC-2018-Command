@@ -18,7 +18,7 @@ public class AutoSwitchL_R extends CommandGroup {
     	addSequential(new DriveForward1_5seconds());
     	addSequential(new Right90());
     	addSequential(new DriveReverse0_5second());
-    	addSequential(new Intake_Auto());
+    	addSequential(new Intake_Switch());
     	addSequential(new ElevatorSwitchUp());
     	addSequential(new DumperOut());
     	
