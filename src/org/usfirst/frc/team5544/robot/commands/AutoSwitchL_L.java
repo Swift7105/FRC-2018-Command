@@ -15,6 +15,7 @@ public class AutoSwitchL_L extends CommandGroup {
     	addSequential(new Intake_Switch());
     	addSequential(new ElevatorSwitchUp());
     	addSequential(new DumperOut());
+    	addSequential(new Intake_Back());
     	
     	
     	

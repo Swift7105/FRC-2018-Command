@@ -9,7 +9,7 @@ public class AutoCrossLine extends CommandGroup {
 
     public AutoCrossLine() {
     	
-    	addSequential(new DriveForward3seconds());
+    	addSequential(new DriveForward2seconds());
     	
     	
         // Add Commands here:

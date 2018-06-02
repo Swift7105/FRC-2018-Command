@@ -18,11 +18,11 @@ public class Elevator extends Subsystem {
     }
     
     public void Up() {
-    	RobotMap.ElevatorMotor.set(0.5);
+    	RobotMap.ElevatorMotor.set(0.7);
     } 
     
     public void Down() {
-    	RobotMap.ElevatorMotor.set(-0.5);
+    	RobotMap.ElevatorMotor.set(-0.7);
     }
     
     public void Stop() {

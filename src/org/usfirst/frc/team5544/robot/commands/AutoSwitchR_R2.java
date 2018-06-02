@@ -5,23 +5,17 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class AutoSwitchC_L extends CommandGroup {
+public class AutoSwitchR_R2 extends CommandGroup {
 
-    public AutoSwitchC_L() {
+    public AutoSwitchR_R2() {
     	
+    	addSequential(new DriveForward2seconds());
+    	addSequential(new Right90());
     	addSequential(new DriveReverse0_5second());
-    	addSequential(new Left_R45());
-    	addSequential(new DriveReverse1_5seconds());
-    	addSequential(new Right_R45());
-    	addSequential(new DriveReverseSlow());
     	addSequential(new Intake_Switch());
     	addSequential(new ElevatorSwitchUp());
     	addSequential(new DumperOut());
     	addSequential(new Intake_Back());
-    	/*addSequential(new DumperIn());
-    	addSequential(new ElevatorSwitchDown());
-    	addSequential(new DriveForward0_5second());
-    	addSequential(new Left90());*/
     	
     	
         // Add Commands here:

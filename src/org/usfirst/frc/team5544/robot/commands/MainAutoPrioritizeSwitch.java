@@ -31,9 +31,9 @@ public class MainAutoPrioritizeSwitch extends CommandGroup {
 		AutoSwitchL_L = new AutoSwitchL_L();
 		AutoSwitchL_R = new AutoSwitchL_R();
 		AutoSwitchC_L = new AutoSwitchC_L();
-		AutoSwitchC_R = new AutoSwitchC_R();
+		AutoSwitchC_R = new AutoSwitchC_R2();
 		AutoSwitchR_L = new AutoSwitchR_L();
-		AutoSwitchR_R = new AutoSwitchR_R();
+		AutoSwitchR_R = new AutoSwitchR_R2();
 		AutoScaleL_L = new AutoScaleL_L();
 		AutoScaleL_R = new AutoScaleL_R();
 		AutoScaleC_L = new AutoScaleC_L();

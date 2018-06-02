@@ -20,8 +20,8 @@ public class Intake extends Subsystem {
     }
     
     public  void IntakeInSlow(){
-    	RobotMap.IntakeLeft.set(-.25);
-    	RobotMap.IntakeRight.set(.25);
+    	RobotMap.IntakeLeft.set(-.3);
+    	RobotMap.IntakeRight.set(.3);
     }
     
     public void IntakeInFull() {

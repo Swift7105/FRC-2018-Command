@@ -47,6 +47,8 @@ public class OI {
 	public static Button Button2_6 = new JoystickButton(Joystick2, 6);
 	public static Button Button2_7 = new JoystickButton(Joystick2, 7);
 	public static Button Button2_8 = new JoystickButton(Joystick2, 8);
+	
+	
 
 	
 	public OI() {
@@ -58,9 +60,9 @@ public class OI {
 		Button2_5.whileHeld(new IntakeInSlow());
 		Button2_6.whileHeld(new IntakeOutFull());
 
-		Button2_1.whenPressed(new Intake_Down());
+		Button2_1.whenPressed(new Intake_Back());
 		Button2_4.whenPressed(new Intake_Vertical());
-		Button2_2.whenPressed(new Intake_Back());
+		Button2_2.whenPressed(new Intake_Down());
 		Button2_3.whenPressed(new Intake_Switch());
 		
 		
